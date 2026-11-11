@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Group Academic Blog | Home</title>
+  <title>Group 14 | Personal Blogs</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 <body>
   <header class="hub-bar">
     <div class="hub-bar-inner">
-      <button type="button" class="hub-brand" id="hubHomeBtn" aria-label="Group Academic Blog Home">
+      <button type="button" class="hub-brand" id="hubHomeBtn" aria-label="Group 14 Home">
         <span class="hub-logo" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
@@ -21,12 +21,12 @@
             <polyline points="2 17 12 22 22 17"></polyline>
           </svg>
         </span>
-        <span class="hub-brand-text">Group Academic Blog</span>
+        <span class="hub-brand-text">Group 14</span>
       </button>
 
       <nav class="hub-nav-actions" aria-label="Primary navigation">
         <button type="button" class="nav-link is-active" id="navHomeBtn">Home</button>
-        <a class="nav-link" href="#aboutSection" id="navAboutLink">About Us</a>
+        <a class="nav-link" href="#aboutSection" id="navAboutLink">About</a>
 
         <div class="dropdown" id="membersDropdown">
           <button
@@ -39,12 +39,8 @@
             <span id="dropdownLabel">Members</span>
             <span class="caret" aria-hidden="true">▾</span>
           </button>
-          <div class="dropdown-menu" id="membersMenu" role="menu" hidden></div>
+          <div class="dropdown-menu" id="membersMenu" role="menu"></div>
         </div>
-
-        <a class="hub-standalone" id="standaloneLink" href="#" target="_blank" rel="noopener" hidden>
-          Open Original <span aria-hidden="true">↗</span>
-        </a>
 
         <button
           type="button"
@@ -53,7 +49,7 @@
           aria-label="Toggle dark mode"
           title="Toggle dark mode"
         >
-          <svg id="themeMoonIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
@@ -62,95 +58,39 @@
   </header>
 
   <main class="hub-main" id="hubView">
-    <!-- Hero Section -->
     <section class="hub-hero">
       <div class="hub-hero-inner">
         <h1 class="hero-title">
-          Six minds, one shared<br>
-          <span class="hero-gradient">creative journey.</span>
+          Group 14<br>
+          <span class="hero-gradient">Personal Blogs.</span>
         </h1>
         <p class="hero-copy">
-          Welcome to our unified team portal. Here, each of our six group members shares their independent blogs, coursework discoveries, design experiments, and practical field logs.
+          All six of our individual blogs in one place. Pick any member below to open their page with their own design, layout, and scripts.
         </p>
-        <div class="hero-actions">
-          <a class="hero-cta" href="#membersSection">Meet the members</a>
-        </div>
+        <a class="hero-cta" href="#membersSection">Meet the members</a>
       </div>
     </section>
 
-    <!-- About Section -->
     <section class="hub-section" id="aboutSection">
       <div class="section-container">
-        <span class="section-pill">COLLABORATION</span>
-        <h2 class="section-heading">About Our Group Blog</h2>
-
-        <div class="about-grid">
-          <article class="about-card accent-green">
-            <div class="about-icon icon-green" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                <polyline points="2 12 12 17 22 12"></polyline>
-                <polyline points="2 17 12 22 22 17"></polyline>
-              </svg>
-            </div>
-            <h3>Distinctive &amp; Unaltered</h3>
-            <p>
-              Every member's page keeps its original HTML structure, custom CSS styling, and interactive JavaScript exactly as they built it.
-            </p>
-          </article>
-
-          <article class="about-card accent-amber">
-            <div class="about-icon icon-amber" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="2" y1="12" x2="22" y2="12"></line>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-              </svg>
-            </div>
-            <h3>Six Unique Portfolios</h3>
-            <p>
-              From engineering notes and coursework fieldwork diaries to personal stories, galleries, and interactive comment sections.
-            </p>
-          </article>
-
-          <article class="about-card accent-blue">
-            <div class="about-icon icon-blue" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-              </svg>
-            </div>
-            <h3>Pure HTML, CSS &amp; JS</h3>
-            <p>
-              Crafted independently by each member and joined into one fast, responsive team portal ready for GitHub and Vercel.
-            </p>
-          </article>
-        </div>
+        <h2 class="section-heading">About This Project</h2>
+        <p class="about-summary">
+          Each member of Group 14 built their own personal blog independently using HTML, CSS, and JavaScript. This site brings all six pages together while keeping every person's original work intact.
+        </p>
       </div>
     </section>
 
-    <!-- Members Blogs Section -->
     <section class="hub-section members-section" id="membersSection">
       <div class="section-container">
-        <div class="members-header">
-          <div>
-            <span class="section-pill">GROUP BLOGS</span>
-            <h2 class="section-heading">Meet the Group Members</h2>
-            <p class="section-sub">
-              Click any member below to open their individual blog with their own original design and scripts.
-            </p>
-          </div>
-          <div class="quick-pills" id="quickPills" aria-label="Quick member links"></div>
-        </div>
-
+        <h2 class="section-heading">Group Members</h2>
         <div class="member-grid" id="memberGrid" aria-label="Member Blogs"></div>
       </div>
     </section>
 
     <footer class="hub-footer">
       <div class="section-container footer-inner">
-        <p class="footer-brand">Group Academic Blog &mdash; Six Minds, One Shared Journey</p>
-        <p class="footer-note">Each member's blog preserves its original HTML, CSS, JavaScript, and media.</p>
+        <p class="footer-brand">Group 14</p>
+        <p class="footer-note">Six individual blogs, unified.</p>
       </div>
     </footer>
   </main>

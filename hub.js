@@ -4,30 +4,31 @@ const MEMBERS = [
     name: "Benjamin Matovu",
     shortName: "Benjamin",
     initials: "BM",
-    color: "#b45309",
+    color: "#854d0e",
     path: "Benja/index.html",
     blogTitle: "DevSecOps & AI Infrastructure",
-    description: "Personal engineering notebook covering automated security pipelines, AI model serving, sessions, likes, and comments."
+    description: "Engineering notebook on automated security pipelines, AI model serving, sessions, and comments."
   },
   {
     id: "brian",
     name: "Brian",
     shortName: "Brian",
     initials: "BR",
-    color: "#2563eb",
+    color: "#1e40af",
     path: "brian/personalblog.html",
     blogTitle: "My Personal Blog",
-    description: "Three expandable sessions on About Me, My Journey, and My Goals with a dark mode toggle."
+    description: "Three expandable sessions covering About Me, My Journey, and My Goals with a dark mode toggle."
   },
   {
     id: "bridget",
     name: "Bridget",
     shortName: "Bridget",
     initials: "BG",
-    color: "#7c3aed",
+    avatarImage: "Bridget/profile.jpg.jpeg",
+    color: "#6d28d9",
     path: "Bridget/index.html",
     blogTitle: "My Personal Blog",
-    description: "Features live date & time, profile picture, interactive session details, visitor comments, and a session visit counter."
+    description: "Features live date and time, session details, visitor comments, and a session visit counter."
   },
   {
     id: "isaac",
@@ -37,27 +38,27 @@ const MEMBERS = [
     color: "#0f766e",
     path: "Isaac/index.html",
     blogTitle: "Coursework & Fieldwork Diary",
-    description: "Documents coursework activities, a project discussion video, and fieldwork gallery photographs."
+    description: "Coursework activities, project discussion video, and fieldwork gallery photographs."
   },
   {
     id: "molly",
     name: "Molly (Nianah)",
     shortName: "Molly",
     initials: "MN",
-    color: "#db2777",
+    color: "#9d174d",
     path: "molly/index.html",
     blogTitle: "Nianah's Personal Blog",
-    description: "Includes Light, Dark, and Pastel themes, story search, photo blog posts, live clock, and visitor comments."
+    description: "Light, Dark, and Pastel themes, story search, photo blog posts, live clock, and comments."
   },
   {
     id: "zion",
     name: "Nsubuga Zion",
     shortName: "Zion",
     initials: "NZ",
-    color: "#4f46e5",
+    color: "#3730a3",
     path: "Zion/zion.html",
     blogTitle: "Nsubuga Zion Personal Blog",
-    description: "Responsive editorial layout with dark mode, interactive session detail modals, and reflections."
+    description: "Editorial layout with dark mode, session detail modals, and personal reflections."
   }
 ];
 
@@ -65,7 +66,6 @@ const membersMenu = document.getElementById("membersMenu");
 const membersDropdown = document.getElementById("membersDropdown");
 const membersDropdownBtn = document.getElementById("membersDropdownBtn");
 const dropdownLabel = document.getElementById("dropdownLabel");
-const quickPills = document.getElementById("quickPills");
 const memberGrid = document.getElementById("memberGrid");
 const hubView = document.getElementById("hubView");
 const viewerWrap = document.getElementById("viewerWrap");
@@ -73,51 +73,39 @@ const memberFrame = document.getElementById("memberFrame");
 const hubHomeBtn = document.getElementById("hubHomeBtn");
 const navHomeBtn = document.getElementById("navHomeBtn");
 const navAboutLink = document.getElementById("navAboutLink");
-const standaloneLink = document.getElementById("standaloneLink");
 const hubThemeBtn = document.getElementById("hubThemeBtn");
 
 function renderMembers() {
   MEMBERS.forEach((member) => {
-    const menuBtn = document.createElement("button");
-    menuBtn.type = "button";
-    menuBtn.className = "dropdown-item";
-    menuBtn.role = "menuitem";
-    menuBtn.dataset.memberId = member.id;
-    menuBtn.innerHTML = `
-      <span class="dropdown-dot" style="background:${member.color}"></span>
-      <span>${member.name}</span>
-      <span class="dropdown-sub">↗</span>
-    `;
-    menuBtn.addEventListener("click", () => {
+    const menuLink = document.createElement("a");
+    menuLink.className = "dropdown-item";
+    menuLink.role = "menuitem";
+    menuLink.href = `#${member.id}`;
+    menuLink.dataset.memberId = member.id;
+    menuLink.textContent = member.name;
+    menuLink.addEventListener("click", (event) => {
+      event.preventDefault();
       closeDropdown();
       selectMember(member.id);
     });
-    membersMenu.appendChild(menuBtn);
+    membersMenu.appendChild(menuLink);
 
-    const quickBtn = document.createElement("button");
-    quickBtn.type = "button";
-    quickBtn.className = "quick-pill";
-    quickBtn.textContent = member.shortName;
-    quickBtn.addEventListener("click", () => selectMember(member.id));
-    quickPills.appendChild(quickBtn);
+    const avatarMarkup = member.avatarImage
+      ? `<span class="avatar"><img class="avatar-img" src="${member.avatarImage}" alt="${member.name}"></span>`
+      : `<span class="avatar" style="background:${member.color}">${member.initials}</span>`;
 
     const card = document.createElement("article");
     card.className = "member-card";
-    card.style.borderTopColor = member.color;
     card.innerHTML = `
       <div class="card-head">
-        <span class="avatar" style="background:${member.color}">${member.initials}</span>
+        ${avatarMarkup}
         <div>
           <h3 class="member-name">${member.name}</h3>
-          <p class="member-file">${member.path}</p>
+          <p class="member-title">${member.blogTitle}</p>
         </div>
       </div>
-      <p class="member-title">${member.blogTitle}</p>
       <p class="member-desc">${member.description}</p>
-      <div class="card-actions">
-        <button type="button" class="btn-view">Open Blog</button>
-        <a class="btn-open" href="${member.path}" target="_blank" rel="noopener">New Tab ↗</a>
-      </div>
+      <button type="button" class="btn-view">Open Blog</button>
     `;
     card.querySelector(".btn-view").addEventListener("click", () => selectMember(member.id));
     memberGrid.appendChild(card);
@@ -125,13 +113,12 @@ function renderMembers() {
 }
 
 function toggleDropdown() {
-  const isHidden = membersMenu.hidden;
-  membersMenu.hidden = !isHidden;
-  membersDropdownBtn.setAttribute("aria-expanded", String(isHidden));
+  const isOpen = membersDropdown.classList.toggle("is-open");
+  membersDropdownBtn.setAttribute("aria-expanded", String(isOpen));
 }
 
 function closeDropdown() {
-  membersMenu.hidden = true;
+  membersDropdown.classList.remove("is-open");
   membersDropdownBtn.setAttribute("aria-expanded", "false");
 }
 
@@ -149,10 +136,9 @@ function updateActiveState(activeMember) {
 function showHome(updateHash = true, scrollTarget = null) {
   hubView.hidden = false;
   viewerWrap.hidden = true;
-  standaloneLink.hidden = true;
   memberFrame.removeAttribute("src");
   updateActiveState(null);
-  document.title = "Group Academic Blog | Home";
+  document.title = "Group 14 | Personal Blogs";
 
   if (updateHash && window.location.hash) {
     history.pushState(null, "", window.location.pathname + window.location.search);
@@ -177,14 +163,12 @@ function selectMember(memberId, updateHash = true) {
 
   hubView.hidden = true;
   viewerWrap.hidden = false;
-  standaloneLink.hidden = false;
-  standaloneLink.href = member.path;
 
   if (memberFrame.getAttribute("src") !== member.path) {
     memberFrame.setAttribute("src", member.path);
   }
   memberFrame.title = `${member.name} — ${member.blogTitle}`;
-  document.title = `${member.name} — Group Academic Blog`;
+  document.title = `${member.name} — Group 14`;
   updateActiveState(member);
 
   if (updateHash && window.location.hash !== `#${member.id}`) {

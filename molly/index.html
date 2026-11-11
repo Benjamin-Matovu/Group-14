@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>My Personal Blog</h1>
+        
+<nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about-me">About</a>
+    <a href="#blog">My Blog</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+        <p>My life, my stories, my memories.</p>
+
+        <button onclick="changeTheme('light')">Light</button>
+        <button onclick="changeTheme('dark')">Dark</button>
+        <button onclick="changeTheme('pastel')">Pastel</button>
+    </header>
+
+    <main id="home">
+
+        <section id="about">
+            <h2>Welcome to My World</h2>
+
+            <p>
+                Welcome to my personal blog!
+                Here I share my daily experiences,
+                special memories and life lessons.
+            </p>
+        </section>
+        
+<section id="date-time">
+    <h2>Today's Date and Time 🕒</h2>
+    <p id="currentDateTime"></p>
+</section>
+
+<section id="about-me">
+    <h2>About Me</h2>
+
+    <p>
+        Hello and welcome to my personal blog!
+        This is a little space where I share my life,
+        my interests, my experiences and the memories
+        that make me who I am.
+    </p>
+
+    <p>
+        I believe every day brings something new to learn,
+        something beautiful to appreciate and a memory
+        worth keeping.
+    </p>
+
+    <p>
+        Thank you for visiting my little corner of the internet.
+        I hope you enjoy reading my stories!
+    </p>
+</section>
+
+        <section id="blog">
+            
+<div class="search-box">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search for a story..."
+        onkeyup="searchStories()"
+    >
+    <button type="button" onclick="searchStories()">Search 🔍</button>
+</div>
+
+            <h2>My Blog Posts</h2>
+
+            <div class="blog-container">
+
+                <article>
+                    <img src="images/mystory.JPG" alt="My story">
+                    <h3>My Story</h3>
+                    <p>A little introduction about myself.</p>
+
+                    <button onclick="showDetails('story')">
+                        Read More
+                    </button>
+                </article>
+
+                <article>
+                  <img src="images/myday.jpg" alt="A day in my life">  
+                    <h3>A Day in My Life</h3>
+                    <p>Some moments from my everyday life.</p>
+
+                    <button onclick="showDetails('day')">
+                        Read More
+                    </button>
+                </article>
+
+                <article>
+                    <img src="images/memories.jpg" alt="My special memories">
+                    <h3>My Special Memories</h3>
+                    <p>My memories and experiences I treasure.</p>
+
+                    <button onclick="showDetails('memories')">
+                        Read More
+                    </button>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Session Information</h2>
+
+            <div id="session-info">
+                <p>Click Read More on any blog post to see more information here.</p>
+            </div>
+        </section>
+
+    </main>
+    
+<section id="comments">
+    <h2>Leave a Comment 💌</h2>
+    <p>I'd love to hear what you think about my blog!</p>
+
+    <form id="commentForm">
+        <input
+            type="text"
+            id="visitorName"
+            placeholder="Enter your name"
+            required
+        >
+
+        <textarea
+            id="visitorComment"
+            placeholder="Write your comment here..."
+            required
+        ></textarea>
+
+        <button type="submit">Post Comment</button>
+    </form>
+
+    <div id="commentList">
+        <h3>Comments</h3>
+    </div>
+</section>
+
+
+    <footer>
+<p>Made with ❤️ by Nianah</p>
+<p>Thank you for visiting my little corner of the internet!</p>
+<p>&copy; 2026 Nianah's Personal Blog. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function changeTheme(theme) {
+            document.body.classList.remove("dark", "pastel");
+
+            if (theme === "dark") {
+                document.body.classList.add("dark");
+            }
+
+            if (theme === "pastel") {
+                document.body.classList.add("pastel");
+            }
+        }
+
+        function showDetails(session) {
+            const info = document.getElementById("session-info");
+
+            if (session === "story") {
+                info.innerHTML = `
+                    <h3>My Story</h3>
+                    <p>This is where I introduce myself, share my interests,
+                    and talk about my personal journey.</p>
+                `;
+            }
+
+            if (session === "day") {
+                info.innerHTML = `
+                    <h3>A Day in My Life</h3>
+                    <p>Here I share my daily activities, important moments,
+                    challenges, and achievements.</p>
+                `;
+            }
+
+            if (session === "memories") {
+                info.innerHTML = `
+                    <h3>My Special Memories</h3>
+                    <p>This section contains special moments, happy experiences,
+                    and memories that are important to me.</p>
+                `;
+            }
+        }
+       
+function searchStories() {
+    const searchTerm = document.getElementById("searchInput")
+        .value.toLowerCase().trim();
+
+    const stories = document.querySelectorAll(".blog-container article");
+
+    stories.forEach(function(story) {
+        const storyText = story.textContent.toLowerCase();
+
+        if (storyText.includes(searchTerm)) {
+            story.style.display = "";
+        } else {
+            story.style.display = "none";
+        }
+    });
+}
+ 
+    </script>
+
+<button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    ↑ Back to Top
+</button>
+
+<script>
+    const commentForm = document.getElementById("commentForm");
+    const commentList = document.getElementById("commentList");
+
+    commentForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("visitorName").value.trim();
+        const comment = document.getElementById("visitorComment").value.trim();
+
+        if (name === "" || comment === "") {
+            alert("Please enter your name and comment.");
+            return;
+        }
+
+        const commentBox = document.createElement("div");
+        commentBox.className = "comment";
+
+        const nameHeading = document.createElement("h4");
+        nameHeading.textContent = name;
+
+        const commentText = document.createElement("p");
+        commentText.textContent = comment;
+
+        commentBox.appendChild(nameHeading);
+        commentBox.appendChild(commentText);
+        commentList.appendChild(commentBox);
+
+        commentForm.reset();
+    });
+    
+function updateDateTime() {
+    const now = new Date();
+
+    document.getElementById("currentDateTime").textContent =
+        now.toLocaleString();
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
+
+</script>
+</body>
+</html>
+

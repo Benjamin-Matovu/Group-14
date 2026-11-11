@@ -1,0 +1,606 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color:rgb(140,158,80);
+
+    color: #333333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: rgb(25,170,200);
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    margin-bottom: 5px;
+    font-size: 36px;
+}
+
+header p {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+main {
+    width: 85%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+    color: #c34f79;
+}
+.blog-container {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.blog-container article {
+    flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+article {
+    background-color: #fff0f4;
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid #f2c5d3;
+}
+
+article h3 {
+    color: #b63f6b;
+}
+
+button {
+    background-color: #c34f79;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #963557;
+}
+
+#backToTop {
+    display: block;
+    margin: 25px auto;
+    padding: 12px 24px;
+    background-color: #b94f76;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#backToTop:hover {
+    background-color: #913858;
+}
+
+
+footer {
+    background-color: #d96c91;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+/* Dark theme */
+body.dark {
+    background-color: #222222;
+    color: #eeeeee;
+}
+
+body.dark section {
+    background-color: #333333;
+}
+
+body.dark article {
+    background-color: #444444;
+    border-color: #666666;
+}
+
+body.dark h2,
+body.dark article h3 {
+    color: #ffb6cf;
+}
+
+
+body.pastel {
+    background-color: #e8f5e9;
+}
+
+body.pastel header,
+body.pastel footer {
+    background-color: #81a88b;
+}
+
+body.pastel h2,
+body.pastel article h3 {
+    color: #4b7655;
+}
+
+@media (max-width: 700px) {
+    .blog-container {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        width: 92%;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+}
+
+.blog-container article {
+    background-color: #fff0f4;
+    padding: 22px;
+    border-radius: 14px;
+    border: 1px solid #f2c5d3;
+    box-shadow: 0 4px 12px rgba(195, 79, 121, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-container article:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(195, 79, 121, 0.22);
+}
+
+.blog-container article h3 {
+    margin-top: 0;
+    font-size: 21px;
+}
+
+.blog-container article button {
+    margin-top: 10px;
+}
+
+
+
+/* Navigation bar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 15px;
+    background-color: #b94f76;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffe0eb;
+    text-decoration: underline;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+#about-me {
+    text-align: center;
+    padding: 35px;
+}
+
+#about-me p {
+    max-width: 700px;
+    margin: 15px auto;
+    font-size: 16px;
+    line-height: 1.8;
+    font-family:lucida sans;
+}
+
+
+.navbar a {
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.navbar a:hover {
+    background-color: #ffe0eb;
+    color: #b94f76;
+    text-decoration: none;
+}
+
+
+
+.blog-container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+
+
+
+footer {
+    background-color: #b94f76;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+#comments {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #fff0f4;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#commentForm input,
+#commentForm textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 15px 0;
+    padding: 12px;
+    border: 1px solid #e4a5ba;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+#commentForm textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#commentForm button {
+    background-color: rgb(200,100,55);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#commentList {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.comment {
+    background-color: white;
+    padding: 15px;
+    margin-top: 12px;
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+}
+
+#date-time {
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #fff0f4;
+    border-radius: 15px;
+    max-width: 600px;
+}
+
+#currentDateTime {
+    color: #b94f76;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 25px auto;
+}
+
+.search-box input {
+    width: 280px;
+    max-width: 100%;
+    padding: 12px;
+    border: 1px solid #e4a5ba;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 12px 20px;
+    background-color: #b94f76;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #913858;
+}
+
+
+/* Fix oversized blog pictures */
+
+
+/* Keep the blog cards within the page */
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.blog-container article {
+    flex: 1 1 250px;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Keep the blog cards organized on wide screens */
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.blog-container article {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+}
+
+
+@media (max-width: 800px) {
+    .blog-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .blog-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+#comments {
+    width: calc(100% - 32px);
+    max-width: 700px;
+    margin: 35px auto;
+    padding: 25px;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+}
+
+#commentForm {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#commentForm input,
+#commentForm textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#commentList {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.comment {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+}
+
+
+/* Fix the overall page width */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Keep the blog section inside the screen */
+#blog {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+}
+
+/* Organize all three blog cards */
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 20px;
+    padding: 0;
+}
+
+/* Stop individual cards from stretching */
+.blog-container article {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Keep pictures inside each card */
+
+
+/* Keep the comment section centered */
+#comments {
+    width: calc(100% - 30px);
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+#commentForm,
+#commentList {
+    width: 100%;
+    max-width: 100%;
+}
+
+#commentForm input,
+#commentForm textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+    .blog-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .blog-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Organize the comment section */
+#comments {
+    width: 90%;
+    max-width: 700px;
+    margin: 35px auto;
+    padding: 30px;
+    background-color: #fff0f4;
+    border-radius: 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Make the comment form neat */
+#commentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+#commentForm input,
+#commentForm textarea {
+    width: 100%;
+    min-height: 45px;
+    padding: 12px;
+    border: 1px solid #e4a5ba;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+#commentForm textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#commentForm button {
+    align-self: center;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background-color: #b94f76;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Organize posted comments */
+#commentList {
+    width: 100%;
+    max-width: 500px;
+    margin: 25px auto 0;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+.comment {
+    padding: 15px;
+    margin: 12px 0;
+    background-color: white;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+
+.blog-container article img {
+    width: 100%;
+    max-width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 15px;
+    transition: transform 0.2s ease;
+}
+.blog-container article img:hover {
+    transform: scale(1.02);
+}
+
+.blog-container article:nth-child(1) img { object-position: center; }

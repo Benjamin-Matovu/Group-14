@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>My Personal Blog</h1>
+<div id="dateTime"></div>
+<img src="profile.jpg.jpeg" alt="My profile picture"
+     class="profile-picture">
+    
+
+<p>A little story about me, my interests and my dreams.</p>
+
+
+        <button id="themeButton">Switch to Dark Mode</button>
+    </header>
+
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#interests">My Interests</a>
+        <a href="#goals">My Goals</a>
+    </nav>
+
+    <main>
+        <section id="about" class="blog-card">
+            <h2>Session 1: About Me</h2>
+            <p>Hello! Welcome to Bridget's personal blog.
+               This is where I share a little about myself.</p>
+            <button class="infoButton" data-session="about">
+                View Session Information
+            </button>
+        </section>
+
+        <section id="interests" class="blog-card">
+            <h2>Session 2: My Interests</h2>
+            <p>I enjoy learning new things, exploring technology
+               and discovering creative ideas.</p>
+            <button class="infoButton" data-session="interests">
+                View Session Information
+            </button>
+        </section>
+
+        <section id="goals" class="blog-card">
+            <h2>Session 3: My Goals</h2>
+            <p>My goal is to improve my skills, succeed in my
+               studies and build a bright future.</p>
+            <button class="infoButton" data-session="goals">
+                View Session Information
+            </button>
+        </section>
+
+        <div id="sessionInfo" aria-live="polite">
+            <h2>Session Information</h2>
+            <p>Select a session button above to see its details.</p>
+        </div>
+        
+        <section id="comments" class="blog-card">
+            <h2>Leave a Comment</h2>
+            <p>Share your thoughts about my blog!</p>
+
+            <form id="commentForm">
+                <label for="visitorName">Your Name</label>
+                <input
+                    type="text"
+                    id="visitorName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <label for="visitorComment">Your Comment</label>
+                <textarea
+                    id="visitorComment"
+                    placeholder="Write your comment here..."
+                    rows="4"
+                    required
+                ></textarea>
+
+                <button type="submit">Post Comment</button>
+            </form>
+
+            <h3>Visitors' Comments</h3>
+            <div id="commentList">
+                <p>No comments yet. Be the first!</p>
+            </div>
+        </section>
+    </main>
+
+<section class="blog-card" id="visitorCounter">
+    <h2>Blog Visitor Counter</h2>
+    <p>Welcome to my blog! You have visited this page:</p>
+
+    <p>
+        <strong id="visitCount">0</strong> times in this session.
+    </p>
+
+    <button id="countButton">Count My Visit</button>
+</section>
+
+    <footer>
+        <p>&copy; 2026 My Personal Blog</p>
+    </footer>
+
+<button id="backToTop" title="Back to top">
+    ↑ Back to Top
+</button>
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+
+/* =================================
+   1. GENERAL PAGE STYLING
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f7f5;
+    color: #26332b;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+
+/* =================================
+   2. WEBSITE HEADER
+================================= */
+
+.header {
+    background: linear-gradient(135deg, #14532d, #228b55);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.header h1 {
+    font-size: 32px;
+    margin: 0 0 10px;
+}
+
+.header p {
+    font-size: 17px;
+    margin: 0 0 15px;
+}
+
+
+/* =================================
+   3. THEME BUTTON
+================================= */
+
+#themeButton {
+    background-color: white;
+    color: #14532d;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#themeButton:hover {
+    background-color: #e0f2e5;
+}
+
+
+/* =================================
+   4. NAVIGATION MENU
+================================= */
+
+.navigation {
+    background-color: #103d24;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navigation a:hover {
+    color: #a7f3c0;
+}
+
+
+/* =================================
+   5. MAIN CONTENT LAYOUT
+================================= */
+
+main {
+    max-width: 1250px;
+    margin: 35px auto;
+    padding: 0 20px;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+
+/* =================================
+   6. WELCOME SECTION
+================================= */
+
+.welcome {
+    grid-column: 1 / -1;
+    background-color: white;
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+.welcome h2 {
+    color: #14532d;
+    margin-top: 0;
+}
+
+
+/* =================================
+   7. SESSION CARDS
+================================= */
+
+.blog-card {
+    min-width: 0;
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow-wrap: break-word;
+}
+
+.blog-card h2 {
+    color: #14532d;
+    font-size: 23px;
+    margin-top: 0;
+}
+
+.blog-card p {
+    font-size: 16px;
+}
+
+
+/* =================================
+   8. VIEW DETAILS BUTTONS
+================================= */
+
+.details-button {
+    background-color: #197344;
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.details-button:hover {
+    background-color: #10552f;
+}
+
+.details {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e8f3ec;
+    border-radius: 8px;
+}
+
+
+/* =================================
+   9. PHOTOGRAPHS AND VIDEOS
+================================= */
+
+.blog-card img,
+.blog-card video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+
+/* =================================
+   10. WEBSITE FOOTER
+================================= */
+
+.footer {
+    background-color: #103d24;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+
+/* =================================
+   11. DARK THEME
+================================= */
+
+body.dark-theme {
+    background-color: #171c19;
+    color: #eeeeee;
+}
+
+body.dark-theme .welcome,
+body.dark-theme .blog-card {
+    background-color: #252d28;
+    color: #eeeeee;
+}
+
+body.dark-theme .welcome h2,
+body.dark-theme .blog-card h2 {
+    color: #8ee4aa;
+}
+
+body.dark-theme .details {
+    background-color: #303a33;
+    color: white;
+}
+
+body.dark-theme .details-button {
+    background-color: #287d4d;
+}
+
+body.dark-theme .navigation {
+    background-color: #101c14;
+}
+
+body.dark-theme .header {
+    background: linear-gradient(135deg, #14251a, #203c2b);
+}
+
+
+/* =================================
+   12. TABLET RESPONSIVENESS
+================================= */
+
+@media (max-width: 800px) {
+
+    main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .header h1 {
+        font-size: 27px;
+    }
+
+    .navigation {
+        gap: 15px;
+    }
+}
+
+
+/* =================================
+   13. MOBILE RESPONSIVENESS
+================================= */
+
+@media (max-width: 550px) {
+
+    main {
+        grid-template-columns: 1fr;
+        padding: 0 12px;
+        margin: 20px auto;
+    }
+
+    .header {
+        padding: 25px 15px;
+    }
+
+    .header h1 {
+        font-size: 23px;
+    }
+
+    .header p {
+        font-size: 15px;
+    }
+
+    .navigation {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .welcome {
+        padding: 20px;
+    }
+
+    .blog-card {
+        padding: 20px;
+    }
+
+    .blog-card h2 {
+        font-size: 21px;
+    }
+}
+

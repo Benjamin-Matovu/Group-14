@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Blog</title>
+
+    <!-- Connect the CSS file -->
+    <link rel="stylesheet" href="personalblog.css">
+</head>
+
+<body>
+
+    <!-- Header section -->
+    <header class="header">
+        <div class="container navbar">
+            <h1 class="logo">MyBlog</h1>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About Me</a>
+                <a href="#journey">My Journey</a>
+                <a href="#goals">My Goals</a>
+            </nav>
+
+            <button id="themeToggle" type="button">
+                🌙 Dark Mode
+            </button>
+        </div>
+    </header>
+
+    <!-- Welcome section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Welcome to My Personal Blog</h2>
+            <p>
+                A place where I share my life, experiences,
+                interests, and future dreams.
+            </p>
+            <a href="#about" class="main-button">Explore My Blog</a>
+        </div>
+    </section>
+
+    <!-- Three blog sessions -->
+    <main class="container blog-container">
+
+        <!-- Session 1 -->
+        <section id="about" class="blog-card">
+            <div class="card-icon">👋</div>
+            <h2>Session 1: About Me</h2>
+
+            <p>
+                Hello! Welcome to my personal blog.
+                I am a student who enjoys learning new things,
+                exploring technology, and improving my skills.
+            </p>
+
+            <div class="extra-content" hidden>
+                <p>
+                    I believe that personal growth comes through
+                    curiosity, discipline, and continuous learning.
+                    This blog allows me to express myself and share
+                    my experiences with other people.
+                </p>
+            </div>
+
+            <button class="read-more" type="button"
+                    aria-expanded="false">
+                Read More
+            </button>
+        </section>
+
+        <!-- Session 2 -->
+        <section id="journey" class="blog-card">
+            <div class="card-icon">🚀</div>
+            <h2>Session 2: My Journey</h2>
+
+            <p>
+                My journey is about learning, overcoming challenges,
+                and discovering what I can achieve through hard work.
+            </p>
+
+            <div class="extra-content" hidden>
+                <p>
+                    Every challenge teaches me something valuable.
+                    I continue to develop my knowledge, build
+                    confidence, and gain practical experience.
+                    I know that progress takes time and patience.
+                </p>
+            </div>
+
+            <button class="read-more" type="button"
+                    aria-expanded="false">
+                Read More
+            </button>
+        </section>
+
+        <!-- Session 3 -->
+        <section id="goals" class="blog-card">
+            <div class="card-icon">🎯</div>
+            <h2>Session 3: My Goals</h2>
+
+            <p>
+                My goal is to become successful, build a good career,
+                and use my skills to make a positive difference.
+            </p>
+
+            <div class="extra-content" hidden>
+                <p>
+                    I plan to keep learning, improve my technical
+                    abilities, work on useful projects, and explore
+                    business opportunities. My long-term dream is
+                    to achieve financial independence and help others.
+                </p>
+            </div>
+
+            <button class="read-more" type="button"
+                    aria-expanded="false">
+                Read More
+            </button>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>
+            &copy; <span id="year"></span> My Personal Blog.
+            All rights reserved.
+        </p>
+        <p>Learning today, growing every day.</p>
+    </footer>
+
+    <!-- Connect the JavaScript file -->
+    <script src="peronalblog.js"></script>
+
+</body>
+</html>

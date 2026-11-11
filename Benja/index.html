@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benjamin Matovu | DevSecOps &amp; AI Infrastructure</title>
+  <meta name="description" content="Personal engineering notebook and portfolio of Benjamin Matovu, exploring DevSecOps, AI infrastructure, and resilient distributed systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Top Navigation Bar (Solely Benjamin's Personal Page) -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a class="brand" href="#top" aria-label="Benjamin Matovu Home">
+        <span class="brand-icon">
+          <!-- Web Code Shield Vector Icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"></path>
+            <polyline points="9 12 11 14 15 10"></polyline>
+          </svg>
+        </span>
+        <span class="brand-title">Benjamin Matovu</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <!-- Web Menu Bars Vector Icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main Navigation">
+        <a class="nav-item" href="#top">Home</a>
+        <a class="nav-item" href="#about">About</a>
+        <a class="nav-item" href="#sessions">Sessions</a>
+        <a class="nav-item" href="#likes">Things I Like</a>
+        <a class="nav-item" href="#comments">Comments</a>
+
+        <button class="theme-icon-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Toggle Theme">
+          <!-- Web Theme Moon Vector Icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Personal Hero Section -->
+  <section class="hero" id="top">
+    <div class="container hero-content">
+      <h1 class="hero-headline">
+        Hi, I'm Benjamin Matovu.<br>
+        <span class="accent-gold">DevSecOps, AI &amp; scalable systems.</span>
+      </h1>
+
+      <p class="hero-statement">
+        Welcome to my personal blog. This is my corner on the web where I document my journey exploring automated security pipelines, resilient AI model serving, practical engineering insights, and generally things I love building.
+      </p>
+
+      <div class="hero-action-row">
+        <a class="btn btn-primary" href="#sessions">
+          <span>Explore Sessions</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a class="btn btn-secondary" href="#likes">
+          <span>What I Like</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </a>
+        <a class="btn btn-secondary" href="#comments">
+          <span>Leave a Comment</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        </a>
+      </div>
+
+      <!-- Core Capabilities Strip (Flaticon Style Vector Icons) -->
+      <div class="hero-capabilities">
+        <div class="capability-card">
+          <div class="capability-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="capability-title">Shift-Left Security</div>
+            <div class="capability-desc">Automated SAST, DAST, and secret leak scanning in CI/CD.</div>
+          </div>
+        </div>
+
+        <div class="capability-card">
+          <div class="capability-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="8" rx="2"></rect>
+              <rect x="2" y="14" width="20" height="8" rx="2"></rect>
+              <line x1="6" y1="6" x2="6.01" y2="6"></line>
+              <line x1="6" y1="18" x2="6.01" y2="18"></line>
+            </svg>
+          </div>
+          <div>
+            <div class="capability-title">AI Serving Compute</div>
+            <div class="capability-desc">Low-latency vLLM and Triton inference deployment clusters.</div>
+          </div>
+        </div>
+
+        <div class="capability-card">
+          <div class="capability-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="capability-title">Scalable Systems</div>
+            <div class="capability-desc">Distributed architectures grounded in operating system theory.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="section-kicker">ENGINEERING PERSPECTIVE</p>
+          <h3>Building resilient, zero-trust infrastructure that withstands production stress.</h3>
+          <p>
+            I am <strong>Benjamin Matovu</strong>, a systems technologist specializing in DevSecOps automation, container orchestration, and high-performance machine learning inference architectures.
+          </p>
+          <p>
+            Modern software cycles move rapidly, but velocity without automated guardrails introduces catastrophic operational risk. My work centers on embedding rigorous vulnerability scanning, secret management, and telemetry into continuous integration pipelines.
+          </p>
+          <div class="editorial-quote">
+            "Tools and frameworks evolve every season; immutable systems principles and security rigor remain foundational."
+          </div>
+          <div class="competency-row">
+            <span class="badge-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Zero-Trust Architecture
+            </span>
+            <span class="badge-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              Kubernetes &amp; Containers
+            </span>
+            <span class="badge-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              vLLM &amp; Triton Serving
+            </span>
+            <span class="badge-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              Python &amp; Go
+            </span>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-card-header">
+            <div class="profile-icon">
+              <!-- Web User Shield Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div>
+              <div class="profile-title">Benjamin Matovu</div>
+              <div class="profile-subtitle">Systems &amp; DevSecOps Engineer</div>
+            </div>
+          </div>
+
+          <div class="profile-facts">
+            <div class="fact-item">
+              <!-- Map Pin Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <div><strong>Location:</strong> Kampala, Uganda &bull; East Africa</div>
+            </div>
+
+            <div class="fact-item">
+              <!-- Terminal Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+              <div><strong>Core Stack:</strong> Linux, Docker, Kubernetes, Terraform, Trivy</div>
+            </div>
+
+            <div class="fact-item">
+              <!-- Cpu Chip Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                <rect x="9" y="9" width="6" height="6"></rect>
+                <line x1="9" y1="1" x2="9" y2="4"></line>
+                <line x1="15" y1="1" x2="15" y2="4"></line>
+                <line x1="9" y1="20" x2="9" y2="23"></line>
+                <line x1="15" y1="20" x2="15" y2="23"></line>
+                <line x1="20" y1="9" x2="23" y2="9"></line>
+                <line x1="20" y1="14" x2="23" y2="14"></line>
+                <line x1="1" y1="9" x2="4" y2="9"></line>
+                <line x1="1" y1="14" x2="4" y2="14"></line>
+              </svg>
+              <div><strong>Inference Focus:</strong> High-throughput model serving pipelines</div>
+            </div>
+
+            <div class="fact-item">
+              <!-- Check Circle Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <div><strong>Availability:</strong> Infrastructure architecture &amp; open source</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sessions Section -->
+  <main class="container section" id="sessions">
+    <div class="section-heading heading-row">
+      <div>
+        <p class="section-kicker">TECHNICAL SESSIONS</p>
+        <h2 class="section-title">In-Depth Engineering Sessions</h2>
+      </div>
+      <p class="section-subtext">Click on any session's expand notes to review technical details and core architectural principles.</p>
+    </div>
+
+    <div class="session-grid">
+      
+      <!-- Session 1: DevSecOps Journey -->
+      <article class="session-card">
+        <div class="card-top">
+          <span class="session-number">01</span>
+          <span class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </span>
+        </div>
+        <div class="card-body">
+          <p class="section-kicker">INFRASTRUCTURE &amp; SECURITY</p>
+          <h3>My DevSecOps Journey</h3>
+          <p>
+            Shifting security left by embedding automated scanning into CI/CD pipelines. Preventing credential leaks, managing container baselines, and maintaining resilient deployments.
+          </p>
+          <div class="tag-list">
+            <span class="tag-pill">CI/CD Pipeline</span>
+            <span class="tag-pill">SAST Security</span>
+            <span class="tag-pill">Trivy Scanning</span>
+          </div>
+
+          <details class="session-accordion">
+            <summary>
+              <span>Expand notes</span>
+              <svg class="accordion-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="accordion-content">
+              <h4>Security as Code</h4>
+              <p>
+                Embedding SAST, container security scanning, and secret leak detection directly into deployment workflows. Catching vulnerabilities during code review before code ever reaches production.
+              </p>
+              <p><strong>Principle:</strong> Security is not an afterthought; it is fundamental architecture.</p>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <!-- Session 2: AI Infrastructure -->
+      <article class="session-card">
+        <div class="card-top">
+          <span class="session-number">02</span>
+          <span class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="8" rx="2"></rect>
+              <rect x="2" y="14" width="20" height="8" rx="2"></rect>
+              <line x1="6" y1="6" x2="6.01" y2="6"></line>
+              <line x1="6" y1="18" x2="6.01" y2="18"></line>
+            </svg>
+          </span>
+        </div>
+        <div class="card-body">
+          <p class="section-kicker">SYSTEMS &amp; CLOUD</p>
+          <h3>AI Infrastructure &amp; Scalability</h3>
+          <p>
+            Designing high-throughput inference environments, container orchestration, low-latency API gateways, and managing compute constraints effectively.
+          </p>
+          <div class="tag-list">
+            <span class="tag-pill">AI Serving</span>
+            <span class="tag-pill">Cloud Compute</span>
+            <span class="tag-pill">vLLM &amp; Triton</span>
+          </div>
+
+          <details class="session-accordion">
+            <summary>
+              <span>Expand notes</span>
+              <svg class="accordion-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="accordion-content">
+              <h4>Model Serving Workloads</h4>
+              <p>
+                Building reliable cloud pipelines that handle fluctuating traffic, optimize memory usage, and ensure uptime for machine learning deployments.
+              </p>
+              <p><strong>Principle:</strong> Great AI models require even better infrastructure to be useful.</p>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <!-- Session 3: Core Systems & Foundations -->
+      <article class="session-card">
+        <div class="card-top">
+          <span class="session-number">03</span>
+          <span class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </span>
+        </div>
+        <div class="card-body">
+          <p class="section-kicker">ACADEMIC FOUNDATION</p>
+          <h3>Systems Foundations &amp; Computing Theory</h3>
+          <p>
+            A deep grounding in operating system internals, concurrency primitives, network protocols, distributed algorithms, and hands-on laboratory investigations.
+          </p>
+          <div class="tag-list">
+            <span class="tag-pill">Core Theory</span>
+            <span class="tag-pill">Distributed OS</span>
+            <span class="tag-pill">Concurrency</span>
+          </div>
+
+          <details class="session-accordion">
+            <summary>
+              <span>Expand notes</span>
+              <svg class="accordion-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="accordion-content">
+              <h4>Foundations Matter</h4>
+              <p>
+                From operating system internals and network protocols to group problem-solving. Rigorous coursework provides the mental models needed to debug complex production systems under pressure.
+              </p>
+              <p><strong>Principle:</strong> Tools change every few years; core computing principles remain timeless.</p>
+            </div>
+          </details>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Things I Like Section (Zero Emojis, Flaticon Style Vector Web Icons) -->
+  <section class="section likes-section" id="likes">
+    <div class="container">
+      <div class="section-heading heading-row">
+        <div>
+          <p class="section-kicker">PASSIONS &amp; PRACTICES</p>
+          <h2 class="section-title">Generally Things I Like</h2>
+        </div>
+        <p class="section-subtext">The developer tooling, engineering books, and creative pursuits that shape my workflow.</p>
+      </div>
+
+      <div class="likes-grid">
+        
+        <!-- Like 1: Modern DevSecOps Stack -->
+        <div class="like-card">
+          <div class="like-header">
+            <div class="like-icon-wrap">
+              <!-- Web Terminal & Layers Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+            </div>
+            <h3>Modern DevSecOps Tooling</h3>
+          </div>
+          <p>
+            Automating declarative environments with Terraform, configuring Kubernetes clusters, writing fast Bash scripts, containerizing microservices, and orchestrating GitHub Actions.
+          </p>
+          <div class="like-chips">
+            <span class="like-chip">Kubernetes</span>
+            <span class="like-chip">Terraform</span>
+            <span class="like-chip">Docker</span>
+            <span class="like-chip">Linux Bash</span>
+            <span class="like-chip">GitHub Actions</span>
+          </div>
+        </div>
+
+        <!-- Like 2: AI Inference & Systems -->
+        <div class="like-card">
+          <div class="like-header">
+            <div class="like-icon-wrap">
+              <!-- Web Neural / Microprocessor Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+            </div>
+            <h3>AI Inference Engineering</h3>
+          </div>
+          <p>
+            Paged-attention memory managers, quantized model deployment, vLLM acceleration engines, and low-latency API gateways engineered for high concurrency under peak loads.
+          </p>
+          <div class="like-chips">
+            <span class="like-chip">vLLM</span>
+            <span class="like-chip">Triton Server</span>
+            <span class="like-chip">PyTorch</span>
+            <span class="like-chip">FastAPI</span>
+            <span class="like-chip">CUDA Ops</span>
+          </div>
+        </div>
+
+        <!-- Like 3: Engineering Literature -->
+        <div class="like-card">
+          <div class="like-header">
+            <div class="like-icon-wrap">
+              <!-- Web Open Book Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </div>
+            <h3>Architecture Literature</h3>
+          </div>
+          <p>
+            In-depth study of distributed systems and reliability engineering. Key influences include Martin Kleppmann's <em>Designing Data-Intensive Applications</em>, <em>The Phoenix Project</em>, and Google's SRE book.
+          </p>
+          <div class="like-chips">
+            <span class="like-chip">DDIA</span>
+            <span class="like-chip">The Phoenix Project</span>
+            <span class="like-chip">Google SRE</span>
+            <span class="like-chip">Clean Architecture</span>
+          </div>
+        </div>
+
+        <!-- Like 4: Strategy & Tactical Focus -->
+        <div class="like-card">
+          <div class="like-header">
+            <div class="like-icon-wrap">
+              <!-- Web Chess / Compass Strategy Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+              </svg>
+            </div>
+            <h3>Chess, Soundtracks &amp; Focus</h3>
+          </div>
+          <p>
+            Outside engineering, I sharpen my tactical foresight through rapid chess, listen to ambient electronic synthwave during late-night debugging sessions, and mentor up-and-coming developers.
+          </p>
+          <div class="like-chips">
+            <span class="like-chip">Speed Chess</span>
+            <span class="like-chip">Synthwave &amp; Lo-Fi</span>
+            <span class="like-chip">Systems Thinking</span>
+            <span class="like-chip">Developer Mentorship</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Comments Section -->
+  <section class="section comments-section" id="comments">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-kicker">FEEDBACK &amp; DISCUSSION</p>
+        <h2 class="section-title">Leave a Comment</h2>
+        <p class="section-subtext">Share your thoughts or exchange ideas on DevSecOps pipelines and AI infrastructure.</p>
+      </div>
+
+      <div class="comments-layout">
+        
+        <!-- Comment Submission Form -->
+        <div class="comment-card">
+          <h3 style="margin-bottom: 8px; font-size: 1.25rem; font-weight: 800;">Post Your Comment</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 22px;">
+            Your feedback and questions are welcome.
+          </p>
+
+          <form id="commentForm" class="comment-form">
+            <div class="form-group">
+              <label for="visitorName">Your Name</label>
+              <input type="text" id="visitorName" placeholder="e.g. Alex Morgan" required autocomplete="name">
+            </div>
+
+            <div class="form-group">
+              <label for="visitorRole">Role or Affiliation (optional)</label>
+              <input type="text" id="visitorRole" placeholder="e.g. Cloud Engineer, Peer, Researcher">
+            </div>
+
+            <div class="form-group">
+              <label for="visitorMessage">Your Comment</label>
+              <textarea id="visitorMessage" placeholder="Write your thoughts or questions here..." rows="4" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <span>Post Comment</span>
+              <!-- Send Icon -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- Comments Feed -->
+        <div class="comments-feed-wrapper">
+          <div class="comments-header-badge">
+            <h3 style="font-size: 1.25rem; font-weight: 800;">Discussion Feed</h3>
+            <span class="comment-count-pill" id="commentCountBadge">3 Comments</span>
+          </div>
+
+          <div class="comments-list" id="commentsList">
+            <!-- Rendered by script.js with zero emojis and clean SVG vector icons -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        <p>&copy; 2026 <strong>Benjamin Matovu</strong> &bull; DevSecOps &amp; AI Infrastructure Portfolio</p>
+      </div>
+      <a href="#top" class="back-top-pill" aria-label="Scroll back to top">
+        <span>Back to top</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="12" y1="19" x2="12" y2="5"></line>
+          <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toastNotice" class="toast-notice" role="status" aria-live="polite">
+    Comment posted successfully.
+  </div>
+
+</body>
+</html>

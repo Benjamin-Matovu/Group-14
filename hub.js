@@ -1,64 +1,51 @@
 const MEMBERS = [
   {
-    id: "benjamin",
-    name: "Benjamin Matovu",
-    shortName: "Benjamin",
-    initials: "BM",
-    color: "#854d0e",
-    path: "Benja/index.html",
-    blogTitle: "DevSecOps & AI Infrastructure",
-    description: "Engineering notebook on automated security pipelines, AI model serving, sessions, and comments."
-  },
-  {
     id: "brian",
-    name: "Lokolimoe Joh Brian",
+    name: "Lokolimoe John Brian",
     shortName: "Brian",
-    initials: "LB",
-    color: "#1e40af",
+    regNumber: "25/U/03848/PS",
     path: "brian/personalblog.html",
-    blogTitle: "My Personal Blog",
-    description: "Three expandable sessions covering About Me, My Journey, and My Goals with a dark mode toggle."
-  },
-  {
-    id: "bridget",
-    name: "Kembabazi Bridget",
-    shortName: "Bridget",
-    initials: "KB",
-    avatarImage: "Bridget/profile.jpg.jpeg",
-    color: "#6d28d9",
-    path: "Bridget/index.html",
-    blogTitle: "My Personal Blog",
-    description: "Features live date and time, session details, visitor comments, and a session visit counter."
-  },
-  {
-    id: "isaac",
-    name: "Talemwa Isaac",
-    shortName: "Isaac",
-    initials: "TI",
-    color: "#0f766e",
-    path: "Isaac/index.html",
-    blogTitle: "Coursework & Fieldwork Diary",
-    description: "Coursework activities, project discussion video, and fieldwork gallery photographs."
+    blogTitle: "My Personal Blog"
   },
   {
     id: "molly",
     name: "Navubya Molly",
     shortName: "Molly",
-    initials: "NM",
-    color: "#9d174d",
+    regNumber: "25/U/04022/PS",
     path: "molly/index.html",
-    blogTitle: "Nianah's Personal Blog",
-    description: "Light, Dark, and Pastel themes, story search, photo blog posts, live clock, and comments."
+    blogTitle: "Nianah's Personal Blog"
+  },
+  {
+    id: "bridget",
+    name: "Kembabazi Bridget",
+    shortName: "Bridget",
+    regNumber: "25/U/03794/PS",
+    path: "Bridget/index.html",
+    blogTitle: "My Personal Blog"
+  },
+  {
+    id: "isaac",
+    name: "Talemwa Isaac",
+    shortName: "Isaac",
+    regNumber: "25/U/04114/EVE",
+    path: "Isaac/index.html",
+    blogTitle: "Coursework & Fieldwork Diary"
   },
   {
     id: "zion",
     name: "Nsubuga Zion",
     shortName: "Zion",
-    initials: "NZ",
-    color: "#3730a3",
+    regNumber: "25/U/04039/PS",
     path: "Zion/zion.html",
-    blogTitle: "Nsubuga Zion Personal Blog",
-    description: "Editorial layout with dark mode, session detail modals, and personal reflections."
+    blogTitle: "Nsubuga Zion Personal Blog"
+  },
+  {
+    id: "benjamin",
+    name: "Matovu Benjamin Agustine",
+    shortName: "Benjamin",
+    regNumber: "25/U/03874/PS",
+    path: "Benja/index.html",
+    blogTitle: "DevSecOps & AI Infrastructure"
   }
 ];
 
@@ -66,7 +53,7 @@ const membersMenu = document.getElementById("membersMenu");
 const membersDropdown = document.getElementById("membersDropdown");
 const membersDropdownBtn = document.getElementById("membersDropdownBtn");
 const dropdownLabel = document.getElementById("dropdownLabel");
-const memberGrid = document.getElementById("memberGrid");
+const memberTableBody = document.getElementById("memberTableBody");
 const hubView = document.getElementById("hubView");
 const viewerWrap = document.getElementById("viewerWrap");
 const memberFrame = document.getElementById("memberFrame");
@@ -90,25 +77,31 @@ function renderMembers() {
     });
     membersMenu.appendChild(menuLink);
 
-    const avatarMarkup = member.avatarImage
-      ? `<span class="avatar"><img class="avatar-img" src="${member.avatarImage}" alt="${member.name}"></span>`
-      : `<span class="avatar" style="background:${member.color}">${member.initials}</span>`;
+    const row = document.createElement("tr");
 
-    const card = document.createElement("article");
-    card.className = "member-card";
-    card.innerHTML = `
-      <div class="card-head">
-        ${avatarMarkup}
-        <div>
-          <h3 class="member-name">${member.name}</h3>
-          <p class="member-title">${member.blogTitle}</p>
-        </div>
-      </div>
-      <p class="member-desc">${member.description}</p>
-      <button type="button" class="btn-view">Open Blog</button>
-    `;
-    card.querySelector(".btn-view").addEventListener("click", () => selectMember(member.id));
-    memberGrid.appendChild(card);
+    const nameCell = document.createElement("td");
+    const nameLink = document.createElement("a");
+    nameLink.className = "member-name-link";
+    nameLink.href = `#${member.id}`;
+    nameLink.textContent = member.name;
+    const arrow = document.createElement("span");
+    arrow.className = "link-arrow";
+    arrow.setAttribute("aria-hidden", "true");
+    arrow.textContent = "→";
+    nameLink.appendChild(arrow);
+    nameLink.addEventListener("click", (event) => {
+      event.preventDefault();
+      selectMember(member.id);
+    });
+    nameCell.appendChild(nameLink);
+
+    const regCell = document.createElement("td");
+    regCell.className = "reg-number";
+    regCell.textContent = member.regNumber;
+
+    row.appendChild(nameCell);
+    row.appendChild(regCell);
+    memberTableBody.appendChild(row);
   });
 }
 
